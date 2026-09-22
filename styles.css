@@ -621,18 +621,16 @@ section{ position:relative; padding-block:88px; }
   background-size:18px 18px;
   opacity:.6;
 }
+.g-tile video{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;
+  background:var(--paper-2);
+}
 .g-tile .g-label{
   position:relative; z-index:1; width:100%; padding:16px;
   background:linear-gradient(0deg, rgba(15,20,19,.72), transparent);
 }
 .g-tile .g-label strong{ display:block; color:#fff; font-size:13.5px; font-weight:700; }
 .g-tile .g-label span{ display:block; color:rgba(255,255,255,.78); font-size:11.5px; margin-top:2px; }
-.g-tile .plus{
-  position:absolute; top:14px; right:14px; z-index:1;
-  width:30px; height:30px; border-radius:50%; border:1.5px dashed var(--ink-faint);
-  display:flex; align-items:center; justify-content:center; color:var(--ink-faint);
-}
-.g-tile .plus svg{ width:13px; height:13px; }
 .gallery-note{ margin-top:22px; font-size:13.5px; color:var(--ink-faint); }
 
 /* ============ CONTACT ============ */
