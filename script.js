@@ -157,6 +157,21 @@
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && !analyticsModal.hidden) { closeModal(); }
     });
+
+    var amEyebrow = document.getElementById('amEyebrow');
+    var amTabButtons = Array.prototype.slice.call(analyticsModal.querySelectorAll('.am-tab-btn'));
+    var amPanels = Array.prototype.slice.call(analyticsModal.querySelectorAll('.am-tab-panel'));
+    amTabButtons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        amTabButtons.forEach(function(b){ b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+        var key = btn.getAttribute('data-am-tab');
+        amPanels.forEach(function(p){
+          var active = p.getAttribute('data-am-panel') === key;
+          p.setAttribute('data-active', active ? 'true' : 'false');
+          if (active && amEyebrow) { amEyebrow.textContent = p.getAttribute('data-eyebrow') || ''; }
+        });
+      });
+    });
   }
 
   /* ---------- work samples: scroll to matching gallery tile ---------- */
