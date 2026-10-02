@@ -301,7 +301,8 @@ section{ position:relative; padding-block:88px; }
 .btn svg{ width:15px; height:15px; }
 .btn-sm{ padding:10px 18px; font-size:13px; }
 .btn-sm svg{ width:13px; height:13px; }
-.work-analytics-cta{ margin-top:22px; }
+.work-cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.work-analytics-cta{ margin-top:0; }
 
 .hero-tags{ display:flex; flex-wrap:wrap; gap:9px; margin-top:30px; }
 .hero-tags span{
