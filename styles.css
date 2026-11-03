@@ -574,6 +574,38 @@ section{ position:relative; padding-block:88px; }
 .am-grid figcaption strong{ color:var(--teal-deep); }
 .am-note{ margin-top:20px; font-size:12.5px; color:var(--ink-faint); }
 
+/* --- GŌ Beauty analytics tab (Meta Ads table) --- */
+.gb{ margin-top:22px; border:1px solid var(--line-soft); border-radius:12px; overflow:hidden; background:var(--paper-2); }
+.gb-kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-soft); }
+.gb-kpi{ display:flex; flex-direction:column; gap:5px; padding:16px 16px 14px; background:var(--paper-2); }
+.gb-kpi .n{ font-family:var(--font-display); font-size:clamp(22px,3.6vw,29px); font-weight:600; line-height:1.1; color:var(--teal-deep); font-variant-numeric:tabular-nums; }
+.gb-kpi .l{ font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); }
+@media (max-width:620px){ .gb-kpis{ grid-template-columns:repeat(2,1fr); } }
+.gb-meta{ display:flex; flex-wrap:wrap; gap:8px; padding:14px 16px; border-top:1px solid var(--line-soft); }
+.gb-chip{ font-size:12px; font-weight:700; color:var(--ink-soft); background:var(--paper); border:1px solid var(--line-soft); border-radius:100px; padding:4px 12px; }
+.gb-table-wrap{ overflow-x:auto; background:var(--paper); border-top:1px solid var(--line-soft); }
+.gb-table-wrap:focus-visible{ outline:2px solid var(--teal); outline-offset:-2px; }
+.gb-table{ width:100%; min-width:540px; border-collapse:separate; border-spacing:0; font-size:13px; font-variant-numeric:tabular-nums; }
+.gb-table th, .gb-table td{ padding:11px 14px; text-align:right; white-space:nowrap; border-bottom:1px solid var(--line-soft); }
+.gb-table thead th{ font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); background:var(--paper-2); }
+.gb-table th[scope="row"], .gb-table thead th:first-child{ position:sticky; left:0; z-index:1; text-align:left; background:var(--paper); font-weight:700; color:var(--ink-soft); }
+.gb-table thead th:first-child{ background:var(--paper-2); color:var(--ink-faint); }
+.gb-table td{ font-weight:600; color:var(--ink); }
+.gb-table tr.gb-group th{ position:sticky; left:0; text-align:left; padding:9px 14px; font-size:10.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-deep); background:var(--teal-tint); }
+.gb-table td.best{ color:var(--teal-deep); font-weight:800; background:var(--teal-tint); }
+.gb-table tbody tr:last-child th, .gb-table tbody tr:last-child td{ border-bottom:none; }
+.gb-hint{ display:none; margin:0; padding:9px 16px; font-size:11.5px; font-weight:600; color:var(--ink-faint); background:var(--paper-2); border-top:1px solid var(--line-soft); }
+@media (max-width:620px){ .gb-hint{ display:block; } }
+.gb-src{ margin-top:16px; border:1px solid var(--line-soft); border-radius:10px; background:var(--paper-2); }
+.gb-src summary{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; cursor:pointer; list-style:none; font-size:12.5px; font-weight:700; color:var(--ink-soft); }
+.gb-src summary::-webkit-details-marker{ display:none; }
+.gb-src summary::after{ content:"+"; font-size:18px; line-height:1; color:var(--teal); font-weight:600; }
+.gb-src[open] summary::after{ content:"\2212"; }
+.gb-src summary:focus-visible{ outline:2px solid var(--teal); outline-offset:-2px; border-radius:10px; }
+.gb-src-grid{ display:grid; gap:8px; padding:0 14px 14px; }
+.gb-src-grid img{ display:block; width:100%; height:auto; background:#fff; border:1px solid var(--line-soft); border-radius:6px; }
+@media (max-width:620px){ .gb-src-grid{ overflow-x:auto; grid-template-columns:minmax(860px,1fr); } }
+
 /* --- about: process pipeline --- */
 .pipeline{ display:flex; flex-wrap:wrap; align-items:center; gap:0; margin-top:36px; }
 .pipeline .p-step{ display:flex; flex-direction:column; gap:6px; min-width:100px; }
@@ -610,6 +642,13 @@ section{ position:relative; padding-block:88px; }
 .tl-meta .badge{ font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); }
 .tl-meta h3{ font-size:22px; }
 .tl-meta .role{ font-size:14.5px; color:var(--ink-soft); font-weight:600; }
+.tl-dates{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 9px; margin-top:12px; padding-top:14px; border-top:1px dashed var(--line); font-size:13.5px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums; letter-spacing:.01em; }
+.tl-dates svg{ width:16px; height:16px; flex:none; color:var(--teal); }
+.tl-dates .sep{ width:16px; height:2px; flex:none; border-radius:2px; background:var(--ink-faint); opacity:.55; }
+.tl-dates .now{ display:inline-flex; align-items:center; gap:7px; color:var(--teal-deep); background:var(--teal-tint); padding:3px 11px 3px 9px; border-radius:100px; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+.tl-dates .now::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--teal); flex:none; animation:tlPulse 2.2s ease-in-out infinite; }
+@keyframes tlPulse{ 0%,100%{ box-shadow:0 0 0 0 transparent; } 50%{ box-shadow:0 0 0 4px color-mix(in srgb, var(--teal) 28%, transparent); } }
+@media (prefers-reduced-motion:reduce){ .tl-dates .now::before{ animation:none; } }
 .tl-body p{ font-size:15.5px; color:var(--ink-soft); line-height:1.7; }
 .tl-list{ margin-top:16px; display:flex; flex-direction:column; gap:14px; }
 .tl-list li{ position:relative; padding-left:22px; font-size:15.5px; color:var(--ink); font-weight:600; line-height:1.5; }
